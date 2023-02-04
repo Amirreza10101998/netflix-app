@@ -3,7 +3,8 @@ import { Card, Container, Row, Carousel, CarouselItem } from "react-bootstrap";
 
 class MovieGallery extends Component {
     state = {
-        movie: []
+        movie: [],
+        interval: null
     };
 
     fetchMovies = async () => {
@@ -27,12 +28,12 @@ class MovieGallery extends Component {
         return (
             <Container fluid>
                 <h3 style={{fontSize: '22px'}} className="text-white mt-3">{this.props.query}</h3>
-                <Carousel className="mb-4">
+                <Carousel interval={this.state.interval} className="mb-4">
                     <CarouselItem>
                         <Row>
                             {this.state.movie.splice(0,6).map(movie => (
                             <Card className="mx-1 bg-transparent" key={movie.imdbID} style={{ width: "214.02px", height: "120.5px" }}  >
-                                <Card.Img className="img-fluid" style={{width: '100%', height: '8.2vw', objectFit: 'cover'}}  variant="top" src={movie.Poster} />
+                                <Card.Img className="img-fluid" style={{width: '100%', objectFit: 'contain'}}  variant="top" src={movie.Poster} />
                             </Card>
                           ))}
                         </Row>
@@ -42,7 +43,7 @@ class MovieGallery extends Component {
                         <Row>
                             {this.state.movie.map(movie => (
                             <Card className="mx-1 bg-transparent" key={movie.imdbID} style={{ width: "214.02px", height: "120.5px" }}  >
-                                <Card.Img className="img-fluid" style={{width: '100%', height: '8.2vw', objectFit: 'cover'}}  variant="top" src={movie.Poster} />
+                                <Card.Img className="img-fluid" style={{width: '100%', objectFit: 'contain'}}  variant="top" src={movie.Poster} />
                             </Card>
                           ))}
                         </Row>

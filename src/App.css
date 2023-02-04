@@ -26,5 +26,20 @@ body {
   
 }
 
+.card {
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+  transform: translateZ(0);
+}
+
+.card:hover {
+  transform: scale(1.1) translateZ(20px);
+  box-shadow: 0px 0px 15px 0px #000000;
+  cursor: pointer;
+
+}
+
+
+
 
 
