@@ -5,7 +5,8 @@ class MovieGallery extends Component {
     state = {
         movie: [],
         interval: null,
-        isLoading: true
+        isLoading: true,
+        error: false
     };
 
     fetchMovies = async () => {
@@ -17,10 +18,12 @@ class MovieGallery extends Component {
                 console.log(data);
             }
         } catch (error) {
+            this.setState({ error: true, isLoading: false });
             console.error(error);
+
         }
     };
-
+    
     componentDidMount(){
         this.fetchMovies()
     }
@@ -29,6 +32,10 @@ class MovieGallery extends Component {
         return this.state.isLoading ? (
             <div className="d-flex align-items-center justify-content-center">
                 <h3 className="text-white">Loading...</h3>
+            </div>
+        ) : this.state.error ? (
+            <div className="d-flex align-items-center justify-content-center">
+                <h3 className="text-white">Error!!!</h3>
             </div>
         ) : (
             <Container fluid>
@@ -43,7 +50,7 @@ class MovieGallery extends Component {
                           ))}
                         </Row>
                     </CarouselItem>
-
+    
                     <CarouselItem>
                         <Row>
                             {this.state.movie.map(movie => (
@@ -57,6 +64,6 @@ class MovieGallery extends Component {
             </Container>
         );
     }
-}
+}    
 
 export default MovieGallery;
