@@ -4,7 +4,8 @@ import { Card, Container, Row, Carousel, CarouselItem } from "react-bootstrap";
 class MovieGallery extends Component {
     state = {
         movie: [],
-        interval: null
+        interval: null,
+        isLoading: true
     };
 
     fetchMovies = async () => {
@@ -12,7 +13,7 @@ class MovieGallery extends Component {
             let response = await fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=48442ee&s=${this.props.query}`);
             if (response.ok) {
                 let data = await response.json();
-                this.setState({ movie: data.Search });
+                this.setState({ movie: data.Search, isLoading: false });
                 console.log(data);
             }
         } catch (error) {
@@ -25,7 +26,11 @@ class MovieGallery extends Component {
     }
     
     render() {
-        return (
+        return this.state.isLoading ? (
+            <div className="d-flex align-items-center justify-content-center">
+                <h3 className="text-white">Loading...</h3>
+            </div>
+        ) : (
             <Container fluid>
                 <h3 style={{fontSize: '22px'}} className="text-white mt-3">{this.props.query}</h3>
                 <Carousel className="d-flex  align-items-center mb-5" interval={this.state.interval}>
@@ -55,4 +60,3 @@ class MovieGallery extends Component {
 }
 
 export default MovieGallery;
-

@@ -21,6 +21,7 @@ const navBar = () => {
               alt="React Bootstrap logo"
             />
           </Navbar.Brand>
+          
           <Nav className='mr-auto'>
             <Nav.Link href="#home">Home</Nav.Link>
             <Nav.Link href="#series">Series</Nav.Link>
