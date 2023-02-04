@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { Card } from "react-bootstrap";
 
 class MovieGallery extends Component {
     state = {
@@ -21,10 +22,16 @@ class MovieGallery extends Component {
         this.fetchMovies()
     }
     
-    render(){
-        return(
-            <div></div>
-        )
+    render() {
+        return (
+            <div>
+                {this.state.movie.map(movie => (
+                    <Card key={movie.imdbID} style={{ width: "18rem" }}>
+                        <Card.Img variant="top" src={movie.Poster} />
+                    </Card>
+                ))}
+            </div>
+        );
     }
 }
 
