@@ -6,4 +6,25 @@ body {
   background-color: #141414;
 }
 
+.carousel-indicators {
+  visibility: hidden;
+}
+
+.carousel-control-next {
+  padding-left: 100px;
+}
+
+.carousel-control-prev {
+  padding-right: 180px;
+}
+
+#dropdown-basic {
+  background-color: black;
+  border: 1px solid white;
+  border-radius: 0%;
+  margin-left: 20px;
+  
+}
+
+
 

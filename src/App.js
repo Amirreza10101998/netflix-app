@@ -14,7 +14,10 @@ function App() {
   <Container fluid>
     <NavBar/>
     <MyList/>
-    <MovieGallery query='Harry Potter'/>
+    <MovieGallery query='Lord of the Rings'/>
+    <MovieGallery query='James Bond'/>
+    <MovieGallery query='Star Wars'/>
+    <MovieGallery query='Pirates of the Caribbean'/>
     <Footer/>
     
   </Container>
