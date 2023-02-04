@@ -10,26 +10,16 @@ body {
   visibility: hidden;
 }
 
-.carousel-control-next {
-  padding-left: 100px;
-}
-
-.carousel-control-prev {
-  padding-right: 180px;
-}
-
 #dropdown-basic {
   background-color: black;
   border: 1px solid white;
   border-radius: 0%;
   margin-left: 20px;
-  
-}
+  }
 
 .card {
   position: relative;
   transition: transform 0.3s ease-in-out;
-  transform: translateZ(0);
 }
 
 .card:hover {

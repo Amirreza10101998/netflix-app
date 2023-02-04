@@ -8,12 +8,10 @@ class MyList extends Component {
                 <Row>
                     <Col className="d-flex"> 
                       <h3 className="text-white">My List</h3>
-                      <Dropdown id="dd-btn">
+                      <Dropdown id="">
                         <Dropdown.Toggle variant="success" id="dropdown-basic">Genres</Dropdown.Toggle>
                           <Dropdown.Menu>
                             <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
                           </Dropdown.Menu>
                       </Dropdown>
                     </Col>

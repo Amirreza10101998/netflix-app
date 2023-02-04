@@ -28,7 +28,7 @@ class MovieGallery extends Component {
         return (
             <Container fluid>
                 <h3 style={{fontSize: '22px'}} className="text-white mt-3">{this.props.query}</h3>
-                <Carousel interval={this.state.interval} className="mb-4">
+                <Carousel className="d-flex  align-items-center mb-5" interval={this.state.interval}>
                     <CarouselItem>
                         <Row>
                             {this.state.movie.splice(0,6).map(movie => (
