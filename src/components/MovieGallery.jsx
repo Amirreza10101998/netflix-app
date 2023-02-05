@@ -20,7 +20,6 @@ class MovieGallery extends Component {
         } catch (error) {
             this.setState({ error: true, isLoading: false });
             console.error(error);
-
         }
     };
     
@@ -57,7 +56,7 @@ class MovieGallery extends Component {
                             <Card className="mx-1 bg-transparent" key={movie.imdbID} style={{ width: "214.02px", height: "120.5px" }}  >
                                 <Card.Img className="img-fluid" style={{width: '100%', objectFit: 'contain'}}  variant="top" src={movie.Poster} />
                             </Card>
-                          ))}
+                          ))};
                         </Row>
                     </CarouselItem>
                 </Carousel>
