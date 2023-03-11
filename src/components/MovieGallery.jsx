@@ -11,7 +11,7 @@ class MovieGallery extends Component {
 
     fetchMovies = async () => {
         try {
-            let response = await fetch(process.env.REACT_APP_BE_URL + "medias");
+            let response = await fetch(`${process.env.REACT_APP_BE_URL}/medias`);
             if (response.ok) {
                 let data = await response.json();
                 this.setState({ movie: data.Search, isLoading: false });
@@ -22,6 +22,8 @@ class MovieGallery extends Component {
             console.error(error);
         }
     };
+
+
 
     componentDidMount() {
         this.fetchMovies()
