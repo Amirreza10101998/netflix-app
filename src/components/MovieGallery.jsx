@@ -11,9 +11,8 @@ class MovieGallery extends Component {
 
     fetchMovies = async () => {
         try {
-            let response = await fetch(process.env.REACT_APP_BE_URL);
+            let response = await fetch(process.env.REACT_APP_BE_URL + "medias");
             if (response.ok) {
-                console.log(response)
                 let data = await response.json();
                 this.setState({ movie: data.Search, isLoading: false });
                 console.log(data);
@@ -44,8 +43,8 @@ class MovieGallery extends Component {
                     <CarouselItem>
                         <Row>
                             {this.state.movie.splice(0, 6).map(movie => (
-                                <Card className="mx-1 bg-transparent" key={movie.imdbID} style={{ width: "214.02px", height: "120.5px" }}  >
-                                    <Card.Img className="img-fluid" style={{ width: '100%', objectFit: 'contain' }} variant="top" src={movie.Poster} />
+                                <Card className="mx-1 bg-transparent" key={movie.id} style={{ width: "214.02px", height: "120.5px" }}  >
+                                    <Card.Img className="img-fluid" style={{ width: '100%', objectFit: 'contain' }} variant="top" src={movie.poster} />
                                 </Card>
                             ))}
                         </Row>
