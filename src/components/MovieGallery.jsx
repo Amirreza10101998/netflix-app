@@ -44,7 +44,7 @@ class MovieGallery extends Component {
                 <Carousel className="d-flex  align-items-center mb-5" interval={this.state.interval}>
                     <CarouselItem>
                         <Row>
-                            {this.state.movie && this.state.movie.slice(0, 6).map(movie => (
+                            {this.state.movie && this.state.movie.map(movie => (
                                 <Card className="mx-1 bg-transparent" key={movie.id} style={{ width: "214.02px", height: "120.5px" }}>
                                     <Card.Img className="img-fluid" style={{ width: '100%', objectFit: 'contain' }} variant="top" src={movie.poster} />
                                 </Card>
@@ -57,7 +57,7 @@ class MovieGallery extends Component {
                         <Row>
                             {this.state.movie.map(movie => (
                                 <Card className="mx-1 bg-transparent" key={movie.imdbID} style={{ width: "214.02px", height: "120.5px" }}  >
-                                    <Card.Img className="img-fluid" style={{ width: '100%', objectFit: 'contain' }} variant="top" src={movie.Poster} />
+                                    <Card.Img className="img-fluid" style={{ width: '100%', objectFit: 'contain' }} variant="top" src={movie.poster} />
                                 </Card>
                             ))};
                         </Row>
